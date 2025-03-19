@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifreli Kapı</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #121212; color: white; text-align: center; padding: 20px; }
+        h1 { font-size: 2em; margin-bottom: 10px; }
+        .container { margin-top: 50px; }
+        .door { width: 150px; height: 200px; background: #654321; display: inline-block; border-radius: 10px; position: relative; }
+        .handle { width: 15px; height: 15px; background: gold; border-radius: 50%; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
+        input, button { padding: 10px; font-size: 16px; margin-top: 20px; border: none; border-radius: 5px; }
+        input { width: 150px; text-align: center; }
+        button { background: #4CAF50; color: white; cursor: pointer; }
+        button:hover { background: #388E3C; }
+        #message { margin-top: 10px; font-size: 1.2em; color: red; }
+    </style>
+</head>
+<body>
+
+    <h1>Şifreli Kapı</h1>
+    <p>XOX oyununda alt kısımda olan şifreyi buraya yaz</p>
+    
+    <div class="container">
+        <div class="door">
+            <div class="handle"></div>
+        </div>
+    </div>
+
+    <input type="text" id="codeInput" placeholder="Şifreyi gir">
+    <button onclick="checkCode()">Kapıyı Aç</button>
+    
+    <p id="message"></p>
+
+    <script>
+        function checkCode() {
+            let userCode = document.getElementById("codeInput").value;
+            let correctCode = "7382"; // Özel oluşturduğum şifre
+
+            if (userCode === correctCode) {
+                window.location.href = "sayfa-4.html";
+            } else {
+                document.getElementById("message").innerText = "Hatalı kod! Tekrar deneyin.";
+            }
+        }
+    </script>
+
+</body>
+</html>
